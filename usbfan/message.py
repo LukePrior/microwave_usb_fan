@@ -1,6 +1,6 @@
 from os.path import dirname, join
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 from .protocol import Colour, Column, Message, MessageStyle, OpenTransition, \
     CloseTransition
@@ -22,6 +22,9 @@ class TextMessage(Message):
 
         # Transpose the image
         img = img.transpose(Image.TRANSPOSE)
+        
+        # Mirror image
+        img = ImageOps.mirror(img)
 
         # Convert the image into one channel
         img_data = [True if p >= 128 else False for p in
