@@ -27,7 +27,7 @@ class TextMessage(Message):
         img = ImageOps.mirror(img)
         
         # Flip image
-        img = ImageOps.flip(img)
+        #img = ImageOps.flip(img)
 
         # Convert the image into one channel
         img_data = [True if p >= 128 else False for p in
