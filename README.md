@@ -7,7 +7,7 @@ FreeBSD and Windows.
 
 ## Installation
 ```sh
-pip install microwave-usbfan
+pip install git+https://github.com/LukePrior/microwave_usb_fan
 ```
 
 ## Example Implementation
