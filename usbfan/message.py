@@ -9,8 +9,8 @@ from .protocol import Colour, Column, Message, MessageStyle, OpenTransition, \
 class TextMessage(Message):
     def __init__(self, text: str,
                  message_style: MessageStyle=MessageStyle.Anticlockwise,
-                 open_transition: OpenTransition=OpenTransition.LeftRight,
-                 close_transition: CloseTransition=CloseTransition.RightLeft):
+                 open_transition: OpenTransition=OpenTransition.RightLeft,
+                 close_transition: CloseTransition=CloseTransition.LeftRight):
         # Open the font, create a blank image and an ImageDraw object
         fnt = ImageFont.truetype(
             join(dirname(__file__), 'fonts', 'Hack-Regular.ttf'))
@@ -22,9 +22,6 @@ class TextMessage(Message):
 
         # Transpose the image
         img = img.transpose(Image.TRANSPOSE)
-        
-        # Mirror image
-        #img = ImageOps.mirror(img)
         
         # Flip image
         img = ImageOps.flip(img)
