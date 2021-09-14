@@ -8,7 +8,7 @@ from .protocol import Colour, Column, Message, MessageStyle, OpenTransition, \
 
 class TextMessage(Message):
     def __init__(self, text: str,
-                 message_style: MessageStyle=MessageStyle.Anticlockwise,
+                 message_style: MessageStyle=MessageStyle.Clockwise,
                  open_transition: OpenTransition=OpenTransition.RightLeft,
                  close_transition: CloseTransition=CloseTransition.LeftRight):
         # Open the font, create a blank image and an ImageDraw object
